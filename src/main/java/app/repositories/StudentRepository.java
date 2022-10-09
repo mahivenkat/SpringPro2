@@ -1,6 +1,6 @@
-package repositories;
+package app.repositories;
 
-import model.Student;
+import app.model.Student;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

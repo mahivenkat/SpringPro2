@@ -1,9 +1,9 @@
-package controller;
+package app.controllers;
 
-import model.Student;
+import app.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import repositories.StudentRepository;
+import app.repositories.StudentRepository;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ public class StudentController {
     @Autowired
     public StudentRepository studentRepository;
 
-    @GetMapping(value = "/all")
+    @RequestMapping(value = "/all", method =  RequestMethod.GET)
     public List<Student> getAllStudents(){
         return studentRepository.findAll();
 

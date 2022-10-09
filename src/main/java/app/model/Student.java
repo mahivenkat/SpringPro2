@@ -1,12 +1,13 @@
-package model;
+package app.model;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
 @Document(collection = "student")
 public class Student {
-    @org.springframework.data.annotation.Id
-    private long Id;
+    @Id
+    private long id;
     private String name;
     private double age;
     private int grade;
@@ -17,18 +18,18 @@ public class Student {
     }
 
     public Student(Long id, String name, double age, int grade) {
-        Id = id;
+        this.id = id;
         this.name = name;
         this.age = age;
         this.grade = grade;
     }
 
     public Long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Long id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getName() {
@@ -58,7 +59,7 @@ public class Student {
     @Override
     public String toString() {
         return "model.Student{" +
-                "Id=" + Id +
+                "Id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 ", grade=" + grade +
